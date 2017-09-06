@@ -1,0 +1,12 @@
+# Executables
+*.iml
+
+# Other files and folders
+.settings/
+.idea/
+
+# Build and Release Folders
+bin-debug/
+bin-release/
+[Oo]bj/
+[Bb]in/
