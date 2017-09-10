@@ -8,4 +8,6 @@ public interface IPersonaService {
     void guardar(PersonaVO persona);
     void guardar2(PersonaVO person);
     PersonaDTO buscarPersona(Integer id);
+    void editarPersona(PersonaVO person);
+    void eliminarPersona(Integer id);
 }

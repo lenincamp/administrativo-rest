@@ -10,6 +10,9 @@ public interface IPersonaGestor {
     void guardar2(PersonaVO person);
 
     PersonaDTO buscarPersona(Integer id);
-    void eliminarPersona(PersonaVO person);
+    void eliminarPersona(Integer id);
+
+    void editar(PersonaVO person);
+
 
 }

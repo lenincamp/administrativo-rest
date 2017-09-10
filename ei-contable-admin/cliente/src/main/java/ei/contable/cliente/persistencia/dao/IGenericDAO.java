@@ -13,6 +13,8 @@ public interface IGenericDAO<T>
 
     T findById(Serializable id,String campo,String... join);
 
+    T findByGetId(Serializable id);
+
 
 
 }

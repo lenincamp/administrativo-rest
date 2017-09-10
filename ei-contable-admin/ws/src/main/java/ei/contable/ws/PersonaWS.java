@@ -42,4 +42,18 @@ public class PersonaWS {
         return new ResponseEntity<PersonaDTO>(per, HttpStatus.OK);
     }
 
+    @PostMapping("/editar")
+    public ResponseEntity<Void> editarPersona(@RequestBody PersonaVO persona, UriComponentsBuilder builder)
+        {
+        servicePersona.editarPersona(persona);
+        return new ResponseEntity<Void>(HttpStatus.OK);
+    }
+
+    @GetMapping("/eliminar/{id}")
+    public ResponseEntity<Void> eliminarPersona(@PathVariable("id") Integer id)
+    {
+        servicePersona.eliminarPersona(id);
+        return new ResponseEntity<Void>(HttpStatus.OK);
+    }
+
 }

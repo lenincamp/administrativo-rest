@@ -9,7 +9,7 @@ public class PersonaDTO{
 
     @Id
     @Column(name = "id")
-    @SequenceGenerator(name = "persona_id_seq", sequenceName = "persona_id_seq", initialValue = 1, allocationSize = 1)
+    @SequenceGenerator(name = "persona_id_seq", sequenceName = "persona_id_seq", initialValue = 2, allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "persona_id_seq")
     private Integer id;
 

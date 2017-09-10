@@ -1,6 +1,7 @@
 package ei.contable.core.persistencia.dao;
 
 import ei.contable.cliente.persistencia.dao.IGenericDAO;
+import org.hibernate.*;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -10,11 +11,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.io.Serializable;
 import java.util.StringTokenizer;
-
-import org.hibernate.Criteria;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.FetchMode;
 
 
 /**
@@ -43,23 +39,37 @@ public class GenericDAO<T> implements IGenericDAO<T> {
     public T save(T tClass){
 
         entityManager.persist(tClass);
+
         return (T)tClass;
     }
 
     @Override
     public void update(T t)
     {
-
-        getCurrentSession().update(t);
-        getCurrentSession().flush();
+        entityManager.merge(t);
     }
 
 
     @Override
     public void delete(T t)
     {
-        getCurrentSession().delete(t);
-        getCurrentSession().flush();
+        Transaction tra= getCurrentSession().beginTransaction();
+        try
+        {
+            entityManager.remove(entityManager.merge(t));
+        }
+        catch (HibernateException he)
+        {
+            throw he;
+        }
+        finally {
+            if(getCurrentSession().isOpen())
+            {
+                getCurrentSession().close();
+            }
+        }
+
+
     }
 
     /**
@@ -157,6 +167,27 @@ public class GenericDAO<T> implements IGenericDAO<T> {
         criteria.add(Restrictions.eq(campo, id));
         return (T) criteria.uniqueResult();
     }
+
+    @Override
+    public T findByGetId(Serializable id)
+    {
+        Transaction tra= getCurrentSession().beginTransaction();
+        try
+        {
+            T entity= getCurrentSession().get(genericType, id);
+            tra.commit();
+            return entity;
+        }
+        catch (HibernateException he)
+        {
+            throw  he;
+        }
+        finally {
+            getCurrentSession().close();
+        }
+
+    }
+
 
 
 

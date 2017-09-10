@@ -30,4 +30,15 @@ public class PersonaService implements IPersonaService {
         return personGest.buscarPersona(id);
     }
 
+
+    @Override
+    public void editarPersona(PersonaVO person) {
+        personGest.editar(person);
+    }
+
+    @Override
+    public void eliminarPersona(Integer id) {
+        personGest.eliminarPersona(id);
+    }
+
 }

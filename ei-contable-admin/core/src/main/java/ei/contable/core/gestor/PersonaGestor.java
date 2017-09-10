@@ -32,10 +32,27 @@ public class PersonaGestor implements IPersonaGestor {
 
     @Override
     public PersonaDTO buscarPersona(Integer id) {
-        return (PersonaDTO)personaDao.findById(id,"id", "persona");
+        //return (PersonaDTO)personaDao.findById(id,"id", "persona");
+        return (PersonaDTO)personaDao.findByGetId(id);
     }
 
 
+    @Override
+    public void eliminarPersona(Integer id) {
+        PersonaDTO persona= new PersonaDTO();
+        persona.setId(id);
+        personaDao.delete(persona);
+    }
+
+    @Override
+    public void editar(PersonaVO person) {
+
+        PersonaDTO personaEdit= new PersonaDTO();
+        personaEdit.setId(person.getId());
+        personaEdit.setNombre(person.getNombre());
+        personaEdit.setApellido(person.getApellido());
+        personaDao.update(personaEdit);
+    }
 
 
 }
