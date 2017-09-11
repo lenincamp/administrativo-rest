@@ -7,22 +7,20 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
 
-@Transactional
+
 @Repository
 public class PersonaDAO extends GenericDAO<PersonaDTO>  implements IPersonaDAO {
 
     @PersistenceContext
     private EntityManager entityManager;
 
+    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_UNCOMMITTED)
     public void guardar(PersonaDTO persona)
     {
         entityManager.persist(persona);
     }
-
-
-
-
-
 
 }

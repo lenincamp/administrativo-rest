@@ -5,6 +5,8 @@ import org.hibernate.*;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.core.GenericTypeResolver;
 import javax.persistence.EntityManager;
@@ -17,7 +19,6 @@ import java.util.StringTokenizer;
  *
  */
 @SuppressWarnings("unchecked")
-@Transactional
 @Repository
 public class GenericDAO<T> implements IGenericDAO<T> {
     @Autowired
@@ -36,6 +37,7 @@ public class GenericDAO<T> implements IGenericDAO<T> {
      */
 
     @Override
+    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_UNCOMMITTED)
     public T save(T tClass){
 
         entityManager.persist(tClass);
@@ -44,6 +46,7 @@ public class GenericDAO<T> implements IGenericDAO<T> {
     }
 
     @Override
+    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_UNCOMMITTED)
     public void update(T t)
     {
         entityManager.merge(t);
@@ -51,6 +54,7 @@ public class GenericDAO<T> implements IGenericDAO<T> {
 
 
     @Override
+    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_UNCOMMITTED)
     public void delete(T t)
     {
         Transaction tra= getCurrentSession().beginTransaction();

@@ -1,7 +1,6 @@
 package ei.contable.cliente.mdl.dto;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
 @Table(name="persona")
