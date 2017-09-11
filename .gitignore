@@ -1,5 +1,6 @@
 # Executables
 *.iml
+*.class
 
 # Other files and folders
 .settings/
