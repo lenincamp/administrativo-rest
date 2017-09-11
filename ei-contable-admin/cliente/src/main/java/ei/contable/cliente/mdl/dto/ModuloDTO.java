@@ -11,13 +11,13 @@ public class ModuloDTO {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "\"SisConTblModulo_CodigoModulo_seq\"")
     private Integer id;
 
-    @Column(name = "Codigo", nullable=false)
+    @Column(name = "\"Codigo\"", nullable=false)
     private String codigo;
 
-    @Column(name = "Nombre", nullable=false)
+    @Column(name = "\"Nombre\"", nullable=false)
     private String nombre;
 
-    @Column(name = "Descripcion", nullable=false)
+    @Column(name = "\"Descripcion\"", nullable=false)
     private String descripcion;
 
     @Column(name = "\"CodigoUsuarioRegistro\"", nullable=false)
