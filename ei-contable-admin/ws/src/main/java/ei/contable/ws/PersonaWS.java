@@ -1,8 +1,6 @@
 package ei.contable.ws;
 
-import ei.contable.cliente.mdl.dto.ArticleDTO;
 import ei.contable.cliente.mdl.dto.PersonaDTO;
-import ei.contable.cliente.services.IArticleService;
 import ei.contable.cliente.services.IPersonaService;
 import ei.contable.cliente.vo.PersonaVO;
 import org.springframework.beans.factory.annotation.Autowired;
