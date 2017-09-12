@@ -2,6 +2,9 @@ package ei.contable.cliente.mdl.dto;
 
 import javax.persistence.*;
 
+/**
+ * @author Dtandazo
+ * */
 @Entity
 @Table(name = "\"SISCONTBLCATVALOR\"")
 public class CatalogoValorDTO extends BaseEntity{

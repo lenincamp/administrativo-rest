@@ -1,5 +1,6 @@
 package ei.contable.cliente.mdl.dto;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,7 +13,9 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 
-
+/**
+ * @author Dtandazo
+ * */
 @Entity
 @Table(name = "\"SISCONTBLESQUEMA\"")
 public class EsquemaDTO extends  BaseEntity{

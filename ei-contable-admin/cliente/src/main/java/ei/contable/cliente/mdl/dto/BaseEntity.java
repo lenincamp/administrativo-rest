@@ -4,6 +4,9 @@ package ei.contable.cliente.mdl.dto;
 import javax.persistence.Column;
 import java.util.Date;
 
+/**
+ * @author Dtandazo
+ * */
 public class BaseEntity {
 
     @Column(name = "\"CODIGOUSUARIOREGISTRO\"")
