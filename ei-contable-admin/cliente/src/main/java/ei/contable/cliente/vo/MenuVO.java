@@ -1,17 +1,23 @@
 package ei.contable.cliente.vo;
 
+import ei.contable.cliente.mdl.dto.ModuloDTO;
+
 import java.sql.Timestamp;
 
-public class ModuloVO {
-    private Integer codigoModulo;
+/**
+ * @author Lenin-PC
+ */
+public class MenuVO {
 
-    private String codigo;
+    private Integer codigoMenu;
+
+    private Integer codigoModuloDTO;
 
     private String nombre;
 
 
+    private String url;
     private String descripcion;
-
 
     private Integer codigoUsuarioRegistro;
 
@@ -21,20 +27,20 @@ public class ModuloVO {
 
     private Timestamp fechaFin;
 
-    public Integer getCodigoModulo() {
-        return codigoModulo;
+    public Integer getCodigoMenu() {
+        return codigoMenu;
     }
 
-    public void setCodigoModulo(Integer codigoModulo) {
-        this.codigoModulo = codigoModulo;
+    public void setCodigoMenu(Integer codigoMenu) {
+        this.codigoMenu = codigoMenu;
     }
 
-    public String getCodigo() {
-        return codigo;
+    public Integer getCodigoModuloDTO() {
+        return codigoModuloDTO;
     }
 
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
+    public void setCodigoModuloDTO(Integer codigoModuloDTO) {
+        this.codigoModuloDTO = codigoModuloDTO;
     }
 
     public String getNombre() {
@@ -43,6 +49,14 @@ public class ModuloVO {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public String getDescripcion() {

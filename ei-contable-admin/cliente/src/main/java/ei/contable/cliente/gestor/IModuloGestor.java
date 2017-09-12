@@ -4,7 +4,7 @@ import ei.contable.cliente.mdl.dto.ModuloDTO;
 import ei.contable.cliente.vo.ModuloVO;
 
 /**
- *
+ *@author Lenin-PC
  */
 public interface IModuloGestor {
     /**
@@ -26,9 +26,5 @@ public interface IModuloGestor {
      */
     void editarModulo(ModuloVO modulo);
 
-    /**
-     *
-     * @param id
-     */
-    void eliminarModulo(Integer id);
+
 }

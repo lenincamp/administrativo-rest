@@ -1,7 +1,20 @@
 package ei.contable.cliente.mdl.dto;
 
-import javax.persistence.*;
-import java.sql.Timestamp;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.GeneratedValue;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.GenerationType;
+import javax.persistence.PrePersist;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.ManyToOne;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import java.util.Date;
+
 /**
  * @author Lenin-PC
  */
@@ -21,171 +34,108 @@ public class MenuDTO {
     /**
      * Relacion de menu modulos
      */
-    @ManyToOne
-    @JoinColumn(name = "\"CODIGOMODULO\"")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "\"CODIGOMODULO\"", insertable = false, updatable = false)
     private ModuloDTO codigoModuloDTO;
 
     /**
      *
      */
-    @Column(name = "\"NOMBRE\"", nullable=false)
+    @Column(name = "\"NOMBRE\"")
     private String nombre;
 
     /**
      *
      */
-    @Column(name = "\"URL\"", nullable=false)
+    @Column(name = "\"URL\"")
     private String url;
 
     /**
      *
      */
-    @Column(name = "\"DESCRIPCION\"", nullable=false)
+    @Column(name = "\"DESCRIPCION\"")
     private String descripcion;
 
     /**
      *
      */
-    @Column(name = "\"CODIGOUSUARIOREGISTRO\"", nullable=false)
-    private Integer codUsuRegistro;
+    @Column(name = "\"CODIGOUSUARIOREGISTRO\"")
+    private Integer codigoUsuarioRegistro;
 
-    /**
-     *
-     */
-    @Column(name="\"FECHAREGISTRO\"", nullable=false)
-    private Timestamp fechaRegistro;
+    @Column(name="\"FECHAREGISTRO\"")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fechaRegistro;
 
-    /**
-     *
-     */
+    @PrePersist
+    protected void onCreate() {
+        fechaRegistro = new Date();
+    }
+
     @Column(name="\"FECHAFIN\"")
-    private Timestamp fechaFin;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date fechaFin;
 
-    /**
-     *
-     * @return
-     */
     public Integer getCodigoMenu() {
         return codigoMenu;
     }
 
-    /**
-     *
-     * @param codigoMenu
-     */
     public void setCodigoMenu(Integer codigoMenu) {
         this.codigoMenu = codigoMenu;
     }
 
-    /**
-     *
-     * @return
-     */
     public ModuloDTO getCodigoModuloDTO() {
         return codigoModuloDTO;
     }
 
-    /**
-     *
-     * @param codigoModuloDTO
-     */
     public void setCodigoModuloDTO(ModuloDTO codigoModuloDTO) {
         this.codigoModuloDTO = codigoModuloDTO;
     }
 
-    /**
-     *
-     * @return
-     */
     public String getNombre() {
         return nombre;
     }
 
-    /**
-     *
-     * @param nombre
-     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    /**
-     *
-     * @return
-     */
     public String getUrl() {
         return url;
     }
 
-    /**
-     *
-     * @param url
-     */
     public void setUrl(String url) {
         this.url = url;
     }
 
-    /**
-     *
-     * @return
-     */
     public String getDescripcion() {
         return descripcion;
     }
 
-    /**
-     *
-     * @param descripcion
-     */
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
 
-    /**
-     *
-     * @return
-     */
     public Integer getCodigoUsuarioRegistro() {
-        return codUsuRegistro;
+        return codigoUsuarioRegistro;
     }
 
-    /**
-     *
-     * @param codUsuRegistro
-     */
-    public void setCodigoUsuarioRegistro(Integer codUsuRegistro) {
-        this.codUsuRegistro = codUsuRegistro;
+    public void setCodigoUsuarioRegistro(Integer codigoUsuarioRegistro) {
+        this.codigoUsuarioRegistro = codigoUsuarioRegistro;
     }
 
-    /**
-     *
-     * @return
-     */
-    public Timestamp getFechaRegistro() {
+    public Date getFechaRegistro() {
         return fechaRegistro;
     }
 
-    /**
-     *
-     * @param fechaRegistro
-     */
-    public void setFechaRegistro(Timestamp fechaRegistro) {
+    public void setFechaRegistro(Date fechaRegistro) {
         this.fechaRegistro = fechaRegistro;
     }
 
-    /**
-     *
-     * @return
-     */
-    public Timestamp getFechaFin() {
+    public Date getFechaFin() {
         return fechaFin;
     }
 
-    /**
-     *
-     * @param fechaFin
-     */
-    public void setFechaFin(Timestamp fechaFin) {
+    public void setFechaFin(Date fechaFin) {
         this.fechaFin = fechaFin;
     }
 }

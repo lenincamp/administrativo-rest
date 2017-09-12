@@ -7,6 +7,10 @@ import ei.contable.cliente.gestor.IModuloGestor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * @author Lenin-PC
+ */
+
 @Service
 public class ModuloService implements IModuloService {
     @Autowired
@@ -27,8 +31,5 @@ public class ModuloService implements IModuloService {
         moduloGestor.editarModulo(modulo);
     }
 
-    @Override
-    public void eliminarModulo(Integer id) {
-        moduloGestor.eliminarModulo(id);
-    }
+
 }

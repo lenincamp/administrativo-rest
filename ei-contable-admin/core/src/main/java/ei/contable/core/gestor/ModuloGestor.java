@@ -31,19 +31,12 @@ public class ModuloGestor implements IModuloGestor{
     @Override
     public void editarModulo(ModuloVO modulo) {
         ModuloDTO mod = new ModuloDTO();
-        mod.setId(modulo.getId());
+        mod.setCodigoModulo(modulo.getCodigoModulo());
         mod.setCodigo(modulo.getCodigo());
         mod.setNombre(modulo.getNombre());
         mod.setDescripcion(modulo.getDescripcion());
         mod.setCodigoUsuarioRegistro(modulo.getCodigoUsuarioRegistro());
         mod.setFechaFin(modulo.getFechaFin());
         moduloDAO.update(mod);
-    }
-
-    @Override
-    public void eliminarModulo(Integer id) {
-        ModuloDTO mod = new ModuloDTO();
-        mod.setId(id);
-        moduloDAO.delete(mod);
     }
 }

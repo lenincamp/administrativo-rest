@@ -1,6 +1,16 @@
 package ei.contable.cliente.mdl.dto;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.GeneratedValue;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.GenerationType;
+import javax.persistence.PrePersist;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 import java.util.Date;
 
 @Entity
@@ -10,22 +20,22 @@ public class ModuloDTO {
     @Column(name = "\"CODIGOMODULO\"")
     @SequenceGenerator(name = "\"SISCONTBLMODULO_CODIGOMODULO_seq\"", sequenceName = "\"SISCONTBLMODULO_CODIGOMODULO_seq\"", initialValue = 1, allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "\"SISCONTBLMODULO_CODIGOMODULO_seq\"")
-    private Integer id;
+    private Integer codigoModulo;
 
-    @Column(name = "\"CODIGO\"", nullable=false)
+    @Column(name = "\"CODIGO\"")
     private String codigo;
 
-    @Column(name = "\"NOMBRE\"", nullable=false)
+    @Column(name = "\"NOMBRE\"")
     private String nombre;
 
-    @Column(name = "\"DESCRIPCION\"", nullable=false)
+    @Column(name = "\"DESCRIPCION\"")
     private String descripcion;
 
-    @Column(name = "\"CODIGOUSUARIOREGISTRO\"", nullable=false)
+    @Column(name = "\"CODIGOUSUARIOREGISTRO\"")
     private Integer codigoUsuarioRegistro;
 
 
-    @Column(name="\"FECHAREGISTRO\"", nullable=false)
+    @Column(name="\"FECHAREGISTRO\"")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaRegistro;
 
@@ -38,13 +48,12 @@ public class ModuloDTO {
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaFin;
 
-
-    public Integer getId() {
-        return id;
+    public Integer getCodigoModulo() {
+        return codigoModulo;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setCodigoModulo(Integer codigoModulo) {
+        this.codigoModulo = codigoModulo;
     }
 
     public String getCodigo() {
