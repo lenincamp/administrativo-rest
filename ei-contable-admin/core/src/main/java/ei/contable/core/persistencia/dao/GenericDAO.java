@@ -57,14 +57,14 @@ public class GenericDAO<T> implements IGenericDAO<T> {
     @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_UNCOMMITTED)
     public void delete(T t)
     {
-        Transaction tra= getCurrentSession().beginTransaction();
+        Transaction transaction= getCurrentSession().beginTransaction();
         try
         {
             entityManager.remove(entityManager.merge(t));
         }
-        catch (HibernateException he)
+        catch (HibernateException exception)
         {
-            throw he;
+            throw exception;
         }
         finally {
             if(getCurrentSession().isOpen())
