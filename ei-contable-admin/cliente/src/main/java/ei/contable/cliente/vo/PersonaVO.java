@@ -1,7 +1,4 @@
 package ei.contable.cliente.vo;
-import javax.persistence.MappedSuperclass;
-import java.io.Serializable;
-import org.springframework.context.annotation.Bean;
 
 
 public class PersonaVO{

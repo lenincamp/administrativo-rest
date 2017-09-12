@@ -1,6 +1,7 @@
 package ei.contable.cliente.mdl.dto;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name="\"SISCONTBLMODULO\"")
@@ -26,16 +27,16 @@ public class ModuloDTO {
 
     @Column(name="\"FECHAREGISTRO\"", nullable=false)
     @Temporal(TemporalType.TIMESTAMP)
-    private java.util.Date fechaRegistro;
+    private Date fechaRegistro;
 
     @PrePersist
     protected void onCreate() {
-        fechaRegistro = new java.util.Date();
+        fechaRegistro = new Date();
     }
 
     @Column(name="\"FECHAFIN\"")
     @Temporal(TemporalType.TIMESTAMP)
-    private java.util.Date fechaFin;
+    private Date fechaFin;
 
 
     public Integer getId() {
@@ -78,19 +79,19 @@ public class ModuloDTO {
         this.codigoUsuarioRegistro = codigoUsuarioRegistro;
     }
 
-    public java.util.Date getFechaRegistro() {
+    public Date getFechaRegistro() {
         return fechaRegistro;
     }
 
-    public void setFechaRegistro(java.util.Date fechaRegistro) {
+    public void setFechaRegistro(Date fechaRegistro) {
         this.fechaRegistro = fechaRegistro;
     }
 
-    public java.util.Date getFechaFin() {
+    public Date getFechaFin() {
         return fechaFin;
     }
 
-    public void setFechaFin(java.util.Date fechaFin) {
+    public void setFechaFin(Date fechaFin) {
         this.fechaFin = fechaFin;
     }
 }
