@@ -3,7 +3,7 @@ package ei.contable.cliente.vo;
 import java.sql.Timestamp;
 
 public class ModuloVO {
-    private Integer id;
+    private Integer codigoModulo;
 
     private String codigo;
 
@@ -21,12 +21,12 @@ public class ModuloVO {
 
     private Timestamp fechaFin;
 
-    public Integer getId() {
-        return id;
+    public Integer getCodigoModulo() {
+        return codigoModulo;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setCodigoModulo(Integer codigoModulo) {
+        this.codigoModulo = codigoModulo;
     }
 
     public String getCodigo() {
