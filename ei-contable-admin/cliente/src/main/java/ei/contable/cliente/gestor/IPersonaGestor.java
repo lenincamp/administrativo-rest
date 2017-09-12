@@ -3,7 +3,9 @@ package ei.contable.cliente.gestor;
 import ei.contable.cliente.mdl.dto.PersonaDTO;
 import ei.contable.cliente.vo.PersonaVO;
 
-
+/**
+ * 
+ */
 public interface IPersonaGestor {
 
     void guardar(PersonaVO persona);

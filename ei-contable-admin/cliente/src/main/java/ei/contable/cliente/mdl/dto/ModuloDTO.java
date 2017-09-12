@@ -3,28 +3,28 @@ package ei.contable.cliente.mdl.dto;
 import javax.persistence.*;
 
 @Entity
-@Table(name="\"SisConTblModulo\"")
+@Table(name="\"SISCONTBLMODULO\"")
 public class ModuloDTO {
     @Id
-    @Column(name = "\"CodigoModulo\"")
-    @SequenceGenerator(name = "\"SisConTblModulo_CodigoModulo_seq\"", sequenceName = "\"SisConTblModulo_CodigoModulo_seq\"", initialValue = 1, allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "\"SisConTblModulo_CodigoModulo_seq\"")
+    @Column(name = "\"CODIGOMODULO\"")
+    @SequenceGenerator(name = "\"SISCONTBLMODULO_CODIGOMODULO_seq\"", sequenceName = "\"SISCONTBLMODULO_CODIGOMODULO_seq\"", initialValue = 1, allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "\"SISCONTBLMODULO_CODIGOMODULO_seq\"")
     private Integer id;
 
-    @Column(name = "\"Codigo\"", nullable=false)
+    @Column(name = "\"CODIGO\"", nullable=false)
     private String codigo;
 
-    @Column(name = "\"Nombre\"", nullable=false)
+    @Column(name = "\"NOMBRE\"", nullable=false)
     private String nombre;
 
-    @Column(name = "\"Descripcion\"", nullable=false)
+    @Column(name = "\"DESCRIPCION\"", nullable=false)
     private String descripcion;
 
-    @Column(name = "\"CodigoUsuarioRegistro\"", nullable=false)
+    @Column(name = "\"CODIGOUSUARIOREGISTRO\"", nullable=false)
     private Integer codigoUsuarioRegistro;
 
 
-    @Column(name="\"FechaRegistro\"", nullable=false)
+    @Column(name="\"FECHAREGISTRO\"", nullable=false)
     @Temporal(TemporalType.TIMESTAMP)
     private java.util.Date fechaRegistro;
 
@@ -33,7 +33,7 @@ public class ModuloDTO {
         fechaRegistro = new java.util.Date();
     }
 
-    @Column(name="\"FechaFin\"")
+    @Column(name="\"FECHAFIN\"")
     @Temporal(TemporalType.TIMESTAMP)
     private java.util.Date fechaFin;
 
