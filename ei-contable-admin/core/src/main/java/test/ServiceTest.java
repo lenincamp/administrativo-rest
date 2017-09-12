@@ -12,9 +12,9 @@ public class ServiceTest {
     @Test
     public void guardarModulo() throws Exception {
         ModuloVO modulo = new ModuloVO();
-        modulo.setCodigo("codigoPrueba");
-        modulo.setNombre("nombrePrueba");
-        modulo.setDescripcion("Descripcion Test");
+        modulo.setCodigo("codigo");
+        modulo.setNombre("nombre");
+        modulo.setDescripcion("Desc");
         modulo.setCodigoUsuarioRegistro(21);
         moduloGestor.guardarModulo(modulo);
     }

@@ -2,25 +2,22 @@ package ei.contable.cliente.mdl.dto;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.GeneratedValue;
-import javax.persistence.SequenceGenerator;
-import javax.persistence.GenerationType;
-import javax.persistence.PrePersist;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import javax.persistence.ManyToOne;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import java.util.Date;
+import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
 
 /**
  * @author Lenin-PC
  */
 @Entity
 @Table(name="\"SISCONTBLMENU\"")
-public class MenuDTO {
+public class MenuDTO extends  BaseEntity{
 
     /**
      *
@@ -56,24 +53,7 @@ public class MenuDTO {
     @Column(name = "\"DESCRIPCION\"")
     private String descripcion;
 
-    /**
-     *
-     */
-    @Column(name = "\"CODIGOUSUARIOREGISTRO\"")
-    private Integer codigoUsuarioRegistro;
 
-    @Column(name="\"FECHAREGISTRO\"")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date fechaRegistro;
-
-    @PrePersist
-    protected void onCreate() {
-        fechaRegistro = new Date();
-    }
-
-    @Column(name="\"FECHAFIN\"")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date fechaFin;
 
     public Integer getCodigoMenu() {
         return codigoMenu;
@@ -115,27 +95,4 @@ public class MenuDTO {
         this.descripcion = descripcion;
     }
 
-    public Integer getCodigoUsuarioRegistro() {
-        return codigoUsuarioRegistro;
-    }
-
-    public void setCodigoUsuarioRegistro(Integer codigoUsuarioRegistro) {
-        this.codigoUsuarioRegistro = codigoUsuarioRegistro;
-    }
-
-    public Date getFechaRegistro() {
-        return fechaRegistro;
-    }
-
-    public void setFechaRegistro(Date fechaRegistro) {
-        this.fechaRegistro = fechaRegistro;
-    }
-
-    public Date getFechaFin() {
-        return fechaFin;
-    }
-
-    public void setFechaFin(Date fechaFin) {
-        this.fechaFin = fechaFin;
-    }
 }
