@@ -7,6 +7,9 @@ import ei.contable.cliente.gestor.IModuloGestor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
+import java.util.List;
+
 /**
  * @author Lenin-PC
  */
@@ -31,5 +34,8 @@ public class ModuloService implements IModuloService {
         moduloGestor.editarModulo(modulo);
     }
 
-
+    @Override
+    public List<ModuloDTO> getAll() {
+        return moduloGestor.getAll();
+    }
 }

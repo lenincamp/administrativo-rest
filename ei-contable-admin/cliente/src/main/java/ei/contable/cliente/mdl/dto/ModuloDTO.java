@@ -1,20 +1,20 @@
 package ei.contable.cliente.mdl.dto;
 
+import org.hibernate.annotations.Filter;
+import org.hibernate.annotations.FilterDef;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.GenerationType;
-import javax.persistence.PrePersist;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
-import java.util.Date;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 @Entity
 @Table(name="\"SISCONTBLMODULO\"")
+@FilterDef(name = "fechaFin", defaultCondition = " fechaFin is not null")
+@Filter(name = "fechaFin")
 public class ModuloDTO extends BaseEntity{
     @Id
     @Column(name = "\"CODIGOMODULO\"")
