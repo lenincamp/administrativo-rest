@@ -53,6 +53,14 @@ public class GenericDAO<T> implements IGenericDAO<T> {
         entityManager.merge(t);
     }
 
+    @Override
+    public List<T> findAll()
+    {
+        Criteria criteria = createCriteria(genericType);
+        return criteria.list();
+    }
+
+
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.READ_UNCOMMITTED)

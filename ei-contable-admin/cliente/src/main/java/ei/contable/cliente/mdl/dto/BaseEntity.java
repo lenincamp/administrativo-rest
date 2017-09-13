@@ -2,7 +2,11 @@ package ei.contable.cliente.mdl.dto;
 
 
 import javax.persistence.Column;
+
 import java.io.Serializable;
+
+import javax.persistence.MappedSuperclass;
+
 import java.util.Date;
 import javax.persistence.MappedSuperclass;
 

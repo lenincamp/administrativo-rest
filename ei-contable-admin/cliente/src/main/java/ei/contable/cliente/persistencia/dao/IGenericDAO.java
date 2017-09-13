@@ -15,6 +15,7 @@ public interface IGenericDAO<T>
     T findById(Serializable id,String campo,String... join);
 
     T findByGetId(Serializable id);
+    List<T> findAll();
 
     List<T> findAll();
 

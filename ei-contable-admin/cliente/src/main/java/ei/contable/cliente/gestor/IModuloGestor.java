@@ -3,6 +3,9 @@ package ei.contable.cliente.gestor;
 import ei.contable.cliente.mdl.dto.ModuloDTO;
 import ei.contable.cliente.vo.ModuloVO;
 
+import java.util.Collection;
+import java.util.List;
+
 /**
  *@author Lenin-PC
  */
@@ -25,6 +28,8 @@ public interface IModuloGestor {
      * @param modulo
      */
     void editarModulo(ModuloVO modulo);
+
+    List<ModuloDTO> getAll();
 
 
 }

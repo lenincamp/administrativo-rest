@@ -7,11 +7,14 @@ import ei.contable.core.persistencia.dao.ModuloDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Collection;
+import java.util.List;
+
 @Component
 public class ModuloGestor implements IModuloGestor{
     @Autowired
     ModuloDAO moduloDAO;
-    //ModuloDTO mod = new ModuloDTO();
+
     @Override
     public void guardarModulo(ModuloVO modulo) {
 
@@ -30,6 +33,7 @@ public class ModuloGestor implements IModuloGestor{
 
     @Override
     public void editarModulo(ModuloVO modulo) {
+
         ModuloDTO mod = new ModuloDTO();
         mod.setCodigoModulo(modulo.getCodigoModulo());
         mod.setCodigo(modulo.getCodigo());
@@ -38,5 +42,10 @@ public class ModuloGestor implements IModuloGestor{
         mod.setCodigoUsuarioRegistro(modulo.getCodigoUsuarioRegistro());
         mod.setFechaFin(modulo.getFechaFin());
         moduloDAO.update(mod);
+    }
+
+    @Override
+    public List<ModuloDTO> getAll() {
+        return moduloDAO.findAll();
     }
 }
