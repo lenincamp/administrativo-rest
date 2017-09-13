@@ -1,6 +1,7 @@
 package ei.contable.cliente.persistencia.dao;
 
 import java.io.Serializable;
+import java.util.List;
 
 public interface IGenericDAO<T>
 {
@@ -14,6 +15,8 @@ public interface IGenericDAO<T>
     T findById(Serializable id,String campo,String... join);
 
     T findByGetId(Serializable id);
+
+    List<T> findAll();
 
 
 

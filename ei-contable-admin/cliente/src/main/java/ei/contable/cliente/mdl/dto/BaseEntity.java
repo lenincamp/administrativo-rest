@@ -2,12 +2,15 @@ package ei.contable.cliente.mdl.dto;
 
 
 import javax.persistence.Column;
+import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.MappedSuperclass;
 
 /**
  * @author Dtandazo
  * */
-public class BaseEntity {
+@MappedSuperclass
+public class BaseEntity implements Serializable{
 
     @Column(name = "\"CODIGOUSUARIOREGISTRO\"")
     private Integer codigoUsuarioRegistro;

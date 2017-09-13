@@ -12,6 +12,7 @@ import org.springframework.core.GenericTypeResolver;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.io.Serializable;
+import java.util.List;
 import java.util.StringTokenizer;
 
 
@@ -162,6 +163,14 @@ public class GenericDAO<T> implements IGenericDAO<T> {
         Criteria criteria = getCurrentSession().createCriteria(clazz);
         fetchJoin(criteria, join);
         return criteria;
+    }
+
+
+    @Override
+    public List<T> findAll()
+    {
+        Criteria criteria = createCriteria(genericType);
+        return criteria.list();
     }
 
 

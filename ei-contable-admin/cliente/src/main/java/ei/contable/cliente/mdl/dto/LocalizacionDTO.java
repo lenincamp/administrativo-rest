@@ -1,12 +1,15 @@
 package ei.contable.cliente.mdl.dto;
 
 import javax.persistence.*;
-
+import org.hibernate.annotations.Filter;
+import org.hibernate.annotations.FilterDef;
 /**
  * @author Dtandazo
  * */
 @Entity
 @Table(name = "\"SISCONTBLLOCALIZACION\"")
+@FilterDef(name = "fechaFin", defaultCondition = " fechaFin is not null")
+@Filter(name = "fechaFin")
 public class LocalizacionDTO {
 
     @Id
