@@ -54,7 +54,7 @@ public class GenericDAO<T> implements IGenericDAO<T> {
     }
 
     @Override
-    public List<T> findAll()
+    public List<T> findAll2()
     {
         Criteria criteria = createCriteria(genericType);
         return criteria.list();
