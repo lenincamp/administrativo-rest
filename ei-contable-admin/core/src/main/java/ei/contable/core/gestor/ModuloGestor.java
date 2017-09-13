@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 public class ModuloGestor implements IModuloGestor{
     @Autowired
     ModuloDAO moduloDAO;
-    //ModuloDTO mod = new ModuloDTO();
+
     @Override
     public void guardarModulo(ModuloVO modulo) {
 
@@ -30,6 +30,7 @@ public class ModuloGestor implements IModuloGestor{
 
     @Override
     public void editarModulo(ModuloVO modulo) {
+
         ModuloDTO mod = new ModuloDTO();
         mod.setCodigoModulo(modulo.getCodigoModulo());
         mod.setCodigo(modulo.getCodigo());

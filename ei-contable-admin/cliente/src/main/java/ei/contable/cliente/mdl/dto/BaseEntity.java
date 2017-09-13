@@ -2,11 +2,13 @@ package ei.contable.cliente.mdl.dto;
 
 
 import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
 import java.util.Date;
 
 /**
  * @author Dtandazo
  * */
+@MappedSuperclass
 public class BaseEntity {
 
     @Column(name = "\"CODIGOUSUARIOREGISTRO\"")
