@@ -4,4 +4,5 @@ import ei.contable.cliente.mdl.dto.ModuloDTO;
 
 public interface IModuloDAO extends IGenericDAO<ModuloDTO>  {
 
+    ModuloDTO findModuloMenuById(Integer Id);
 }

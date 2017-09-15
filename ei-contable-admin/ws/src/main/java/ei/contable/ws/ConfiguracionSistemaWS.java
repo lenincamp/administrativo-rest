@@ -45,6 +45,12 @@ public class ConfiguracionSistemaWS {
         return new ResponseEntity<ModuloDTO>(modulo, HttpStatus.OK);
     }
 
+    @GetMapping("mobuloMenuPorId/{id}")
+    public ResponseEntity<ModuloDTO> getModuloMenuById(@PathVariable("id") Integer id) {
+        ModuloDTO modulo = moduloService.findModuloMenuById(id);
+        return new ResponseEntity<ModuloDTO>(modulo, HttpStatus.OK);
+    }
+
     @GetMapping("mobuloAll")
     public ResponseEntity<Collection<ModuloDTO>> getAll() {
         Collection<ModuloDTO> modulo = moduloService.getAll();

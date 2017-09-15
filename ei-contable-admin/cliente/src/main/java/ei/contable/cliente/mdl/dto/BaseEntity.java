@@ -15,13 +15,20 @@ import javax.persistence.MappedSuperclass;
  * */
 @MappedSuperclass
 public class BaseEntity implements Serializable{
-
+    /**
+     *
+     * @return
+     */
     @Column(name = "\"CODIGOUSUARIOREGISTRO\"")
     private Integer codigoUsuarioRegistro;
-
+    /**
+     *
+     */
     @Column(name = "\"FECHAREGISTRO\"")
     private Date fechaRegistro=new Date();
-
+    /**
+     *
+     */
     @Column(name = "\"FECHAFIN\"")
     private Date fechaFin;
 

@@ -38,4 +38,10 @@ public class ModuloService implements IModuloService {
     public List<ModuloDTO> getAll() {
         return moduloGestor.getAll();
     }
+
+    @Override
+    public ModuloDTO findModuloMenuById(Integer Id) {
+
+        return  moduloGestor.findModuloMenuById(Id);
+    }
 }

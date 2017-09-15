@@ -16,41 +16,41 @@ import javax.persistence.Table;
  * @author Lenin-PC
  */
 @Entity
-@Table(name="\"SISCONTBLMENU\"")
+@Table(name="`SISCONTBLMENU`")
 public class MenuDTO extends  BaseEntity{
 
     /**
      *
      */
     @Id
-    @Column(name = "\"CODIGOMENU\"")
-    @SequenceGenerator(name = "\"SINCONTBLMENU_CODIGOMENU_seq\"", sequenceName = "\"SINCONTBLMENU_CODIGOMENU_seq\"", initialValue = 1, allocationSize = 1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "\"SINCONTBLMENU_CODIGOMENU_seq\"")
+    @Column(name = "`CODIGOMENU`")
+    @SequenceGenerator(name = "`SINCONTBLMENU_CODIGOMENU_seq`", sequenceName = "`SINCONTBLMENU_CODIGOMENU_seq`", initialValue = 1, allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "`SINCONTBLMENU_CODIGOMENU_seq`")
     private Integer codigoMenu;
 
     /**
      * Relacion de menu modulos
      */
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "\"CODIGOMODULO\"", insertable = false, updatable = false)
-    private ModuloDTO codigoModuloDTO;
+    @JoinColumn(name = "`CODIGOMODULO`", insertable = false, updatable = false)
+    private ModuloDTO moduloDTOCol;
 
     /**
      *
      */
-    @Column(name = "\"NOMBRE\"")
+    @Column(name = "`NOMBRE`")
     private String nombre;
 
     /**
      *
      */
-    @Column(name = "\"URL\"")
+    @Column(name = "`URL`")
     private String url;
 
     /**
      *
      */
-    @Column(name = "\"DESCRIPCION\"")
+    @Column(name = "`DESCRIPCION`")
     private String descripcion;
 
 
@@ -64,11 +64,11 @@ public class MenuDTO extends  BaseEntity{
     }
 
     public ModuloDTO getCodigoModuloDTO() {
-        return codigoModuloDTO;
+        return moduloDTOCol;
     }
 
-    public void setCodigoModuloDTO(ModuloDTO codigoModuloDTO) {
-        this.codigoModuloDTO = codigoModuloDTO;
+    public void setCodigoModuloDTO(ModuloDTO moduloDTOCol) {
+        this.moduloDTOCol = moduloDTOCol;
     }
 
     public String getNombre() {

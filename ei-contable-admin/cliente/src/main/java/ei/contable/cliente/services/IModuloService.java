@@ -9,4 +9,5 @@ public interface IModuloService {
     ModuloDTO buscarModuloPorId(Integer id);
     void editarModulo(ModuloVO modulo);
     Collection<ModuloDTO> getAll();
+    ModuloDTO findModuloMenuById(Integer Id);
 }

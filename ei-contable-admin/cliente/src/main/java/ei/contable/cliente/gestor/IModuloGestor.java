@@ -29,7 +29,18 @@ public interface IModuloGestor {
      */
     void editarModulo(ModuloVO modulo);
 
+    /**
+     *
+     * @return
+     */
     List<ModuloDTO> getAll();
+
+    /**
+     *
+     * @param Id
+     * @return
+     */
+    ModuloDTO findModuloMenuById(Integer Id);
 
 
 }

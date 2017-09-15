@@ -48,4 +48,9 @@ public class ModuloGestor implements IModuloGestor{
     public List<ModuloDTO> getAll() {
         return moduloDAO.findAll();
     }
+
+    @Override
+    public ModuloDTO findModuloMenuById(Integer Id) {
+        return moduloDAO.findModuloMenuById(Id);
+    }
 }
