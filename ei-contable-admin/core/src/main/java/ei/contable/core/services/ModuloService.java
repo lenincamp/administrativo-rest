@@ -1,15 +1,13 @@
 package ei.contable.core.services;
 
+import ei.contable.cliente.gestor.IModuloGestor;
 import ei.contable.cliente.mdl.dto.ModuloDTO;
 import ei.contable.cliente.services.IModuloService;
 import ei.contable.cliente.vo.ModuloVO;
-import ei.contable.cliente.gestor.IModuloGestor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 
 /**
  * @author Lenin-PC
@@ -41,8 +39,7 @@ public class ModuloService implements IModuloService {
     }
 
     @Override
-    public ModuloDTO findModuloMenuById(Integer Id) {
-
+    public List<ModuloDTO> findModuloMenuById(Integer Id) {
         return  moduloGestor.findModuloMenuById(Id);
     }
 }

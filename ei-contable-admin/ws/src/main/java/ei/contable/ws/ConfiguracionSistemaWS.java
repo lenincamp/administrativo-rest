@@ -14,9 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 
 @Controller
 @RequestMapping("configuracionsitemaws/")
@@ -48,9 +46,10 @@ public class ConfiguracionSistemaWS {
     }
 
     @GetMapping("mobuloMenuPorId/{id}")
-    public ResponseEntity<ModuloDTO> getModuloMenuById(@PathVariable("id") Integer id) {
-        ModuloDTO modulo = moduloService.findModuloMenuById(id);
-        return new ResponseEntity<ModuloDTO>(modulo, HttpStatus.OK);
+    public ResponseEntity<List<ModuloDTO>> getModuloMenuById(@PathVariable("id") Integer id) {
+        Integer codigo = id == 0 ? null:id;
+        List<ModuloDTO> modulo = moduloService.findModuloMenuById(codigo);
+        return new ResponseEntity<List<ModuloDTO>>(modulo, HttpStatus.OK);
     }
 
     @GetMapping("mobuloAll")

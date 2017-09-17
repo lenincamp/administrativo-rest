@@ -7,9 +7,7 @@ import ei.contable.core.persistencia.dao.ModuloDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 
 @Component
 public class ModuloGestor implements IModuloGestor{
@@ -51,7 +49,7 @@ public class ModuloGestor implements IModuloGestor{
     }
 
     @Override
-    public ModuloDTO findModuloMenuById(Integer Id) {
+    public List<ModuloDTO> findModuloMenuById(Integer Id) {
         return moduloDAO.findModuloMenuById(Id);
     }
 }
