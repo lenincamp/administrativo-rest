@@ -1,6 +1,8 @@
 package ei.contable.cliente.mdl.dto;
 
 
+import org.hibernate.annotations.Where;
+
 import javax.persistence.Column;
 
 import java.io.Serializable;

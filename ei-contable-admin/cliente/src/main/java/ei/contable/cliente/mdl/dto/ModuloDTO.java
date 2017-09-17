@@ -1,16 +1,20 @@
 package ei.contable.cliente.mdl.dto;
 
 import org.hibernate.annotations.Filter;
-import org.hibernate.annotations.FilterDef;
+import org.hibernate.annotations.FilterJoinTable;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -18,8 +22,9 @@ import java.util.Set;
  */
 @Entity
 @Table(name="`SISCONTBLMODULO`")
-@FilterDef(name = "fechaFin", defaultCondition = " fechaFin is not null")
-@Filter(name = "fechaFin")
+/*@FilterDef(name = "fechaFin", defaultCondition = " fechaFin is not null")
+@Filter(name = "fechaFin")*/
+@Where( clause = "`FECHAFIN` IS NULL" )
 public class ModuloDTO extends BaseEntity{
     /**
      *
@@ -48,12 +53,13 @@ public class ModuloDTO extends BaseEntity{
      *
      */
     @OneToMany(mappedBy = "moduloDTOCol")
-    private Set<MenuDTO> menuDTOCol;
+    private Set<MenuDTO> menuDTOCol= new HashSet<MenuDTO>();
     /**
      *
      */
     @OneToMany(mappedBy = "moduloDTOCol")
-    private Set<RelModPerDTO> relModPerDTOCol;
+    @Filter(name="fechaFinNull", condition="`FECHAFIN` IS NULL")
+    private Set<RelacionModuloPerfilDTO> relacionModuloPerfilDTOCol;
     /**
      *
      */
@@ -148,16 +154,16 @@ public class ModuloDTO extends BaseEntity{
      * 
      * @return
      */
-    public Set<RelModPerDTO> getrelModPerfilDTOCol() {
-        return relModPerDTOCol;
+    public Set<RelacionModuloPerfilDTO> getrelModPerfilDTOCol() {
+        return relacionModuloPerfilDTOCol;
     }
 
     /**
      *
-     * @param relModPerDTOCol
+     * @param relacionModuloPerfilDTOCol
      */
-    public void setrelModPerfilDTOCol(Set<RelModPerDTO> relModPerDTOCol) {
-        this.relModPerDTOCol = relModPerDTOCol;
+    public void setrelModPerfilDTOCol(Set<RelacionModuloPerfilDTO> relacionModuloPerfilDTOCol) {
+        this.relacionModuloPerfilDTOCol = relacionModuloPerfilDTOCol;
     }
 
     /**

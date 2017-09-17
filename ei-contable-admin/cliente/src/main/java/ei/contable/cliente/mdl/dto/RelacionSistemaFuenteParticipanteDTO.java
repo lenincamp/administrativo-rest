@@ -1,6 +1,8 @@
 package ei.contable.cliente.mdl.dto;
 
 
+import org.hibernate.annotations.Where;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,7 +18,8 @@ import javax.persistence.JoinColumn;
  */
 @Entity
 @Table(name="`SISCONTBLRELSISFTEPAR`")
-public class  RelSisFteParDTO{
+@Where( clause = "`FECHAFIN` IS NULL" )
+public class RelacionSistemaFuenteParticipanteDTO extends BaseEntity{
 
     /**
      *
@@ -30,20 +33,20 @@ public class  RelSisFteParDTO{
      *
      */
     //@Column(name = "`CODIGOSISTEMAFUENTE`", nullable = false)
-    @JoinColumn(name = "`CODIGOSISTEMAFUENTE`", referencedColumnName = "`CODIGOSISTEMAFUENTE`", insertable = false, updatable = false)
-    private Integer codigoSistemaFuente;
+    /*@JoinColumn(name = "`CODIGOSISTEMAFUENTE`", referencedColumnName = "`CODIGOSISTEMAFUENTE`", insertable = false, updatable = false)
+    private Integer codigoSistemaFuente;*/
     /**
      *
      */
     //@Column(name = "`CODIGOPARTICIPANTE`", nullable = false)
-    @JoinColumn(name = "`CODIGOPARTICIPANTE`", referencedColumnName = "`CODIGOPARTICIPANTE`", insertable = false, updatable = false)
-    private Integer codigoParticipante;
+    /*@JoinColumn(name = "`CODIGOPARTICIPANTE`", referencedColumnName = "`CODIGOPARTICIPANTE`", insertable = false, updatable = false)
+    private Integer codigoParticipante;*/
     /**
      *
      */
     //@Column(name = "`CODIGOUSUARIO`", nullable = false)
-    @JoinColumn(name = "`CODIGOUSUARIO`", referencedColumnName = "`CODIGOUSUARIO`", insertable = false, updatable = false)
-    private Integer codigoUsuario;
+    /*@JoinColumn(name = "`CODIGOUSUARIO`", referencedColumnName = "`CODIGOUSUARIO`", insertable = false, updatable = false)
+    private Integer codigoUsuario;*/
     /**
      *
      */
@@ -84,48 +87,48 @@ public class  RelSisFteParDTO{
      *
      * @return
      */
-    public Integer getCodigoSistemaFuente() {
+    /*public Integer getCodigoSistemaFuente() {
         return codigoSistemaFuente;
-    }
+    }*/
     /**
      *
      * @return
      */
-    public void setCodigoSistemaFuente(Integer codigoSistemaFuente) {
+    /*public void setCodigoSistemaFuente(Integer codigoSistemaFuente) {
         this.codigoSistemaFuente = codigoSistemaFuente;
     }
-
+    */
 
     /**
      *
      * @return
      */
-    public Integer getCodigoParticipante() {
+    /*public Integer getCodigoParticipante() {
         return codigoParticipante;
-    }
+    }*/
     /**
      *
      * @return
      */
-    public void setCodigoParticipante(Integer codigoParticipante) {
+    /*public void setCodigoParticipante(Integer codigoParticipante) {
         this.codigoParticipante = codigoParticipante;
-    }
+    }*/
 
     /**
      *
      * @return
      */
     
-    public Integer getCodigoUsuario() {
+    /*public Integer getCodigoUsuario() {
         return codigoUsuario;
-    }
+    }*/
     /**
      *
      * @return
      */
-    public void setCodigoUsuario(Integer codigoUsuario) {
+    /*public void setCodigoUsuario(Integer codigoUsuario) {
         this.codigoUsuario = codigoUsuario;
-    }
+    }*/
 
     /**
      *

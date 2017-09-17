@@ -1,5 +1,7 @@
 package ei.contable.cliente.mdl.dto;
 
+import org.hibernate.annotations.Where;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,7 +17,8 @@ import java.util.Set;
  */
 @Entity
 @Table(name="`SISCONTBLUSUARIO`")
-public class  UsuarioDTO{
+@Where( clause = "`FECHAFIN` IS NULL" )
+public class  UsuarioDTO extends BaseEntity{
     /**
      *
      */
@@ -46,17 +49,17 @@ public class  UsuarioDTO{
      *
      */
     @OneToMany(mappedBy = "usuarioDTOCol")
-    private Set<RelRolUsuDTO> relRolUsuarioDTOCol;
+    private Set<RelacionRolUsuarioDTO> relRolUsuarioDTOCol;
     /**
      *
      */
     @OneToMany(mappedBy = "usuarioDTOCol")
-    private Set<RelSisFteParDTO> relSisFteParticipanteDTOCol;
+    private Set<RelacionSistemaFuenteParticipanteDTO> relSisFteParticipanteDTOCol;
     /**
      *
      */
     @OneToMany(mappedBy = "usuarioDTOCol")
-    private Set<RelUsuPerDTO> relUsuPerfilDTOCol;
+    private Set<RelacionUsuarioPerfilDTO> relUsuPerfilDTOCol;
 
     /**
      *
@@ -124,7 +127,7 @@ public class  UsuarioDTO{
      * @return
      */
     
-    public Set<RelRolUsuDTO> getrelRolUsuarioDTOCol() {
+    public Set<RelacionRolUsuarioDTO> getrelRolUsuarioDTOCol() {
         return relRolUsuarioDTOCol;
     }
 
@@ -132,7 +135,7 @@ public class  UsuarioDTO{
      *
      * @param relRolUsuarioDTOCol
      */
-    public void setrelRolUsuarioDTOCol(Set<RelRolUsuDTO> relRolUsuarioDTOCol) {
+    public void setrelRolUsuarioDTOCol(Set<RelacionRolUsuarioDTO> relRolUsuarioDTOCol) {
         this.relRolUsuarioDTOCol = relRolUsuarioDTOCol;
     }
 
@@ -140,7 +143,7 @@ public class  UsuarioDTO{
     /**
      *
      */
-    public Set<RelSisFteParDTO> getrelSisFteParticipanteDTOCol() {
+    public Set<RelacionSistemaFuenteParticipanteDTO> getrelSisFteParticipanteDTOCol() {
         return relSisFteParticipanteDTOCol;
     }
 
@@ -148,7 +151,7 @@ public class  UsuarioDTO{
      *
      * @param relSisFteParticipanteDTOCol
      */
-    public void setrelSisFteParticipanteDTOCol(Set<RelSisFteParDTO> relSisFteParticipanteDTOCol) {
+    public void setrelSisFteParticipanteDTOCol(Set<RelacionSistemaFuenteParticipanteDTO> relSisFteParticipanteDTOCol) {
         this.relSisFteParticipanteDTOCol = relSisFteParticipanteDTOCol;
     }
 
@@ -156,7 +159,7 @@ public class  UsuarioDTO{
      *
      * @return
      */
-    public Set<RelUsuPerDTO> getrelUsuPerfilDTOCol() {
+    public Set<RelacionUsuarioPerfilDTO> getrelUsuPerfilDTOCol() {
         return relUsuPerfilDTOCol;
     }
 
@@ -164,7 +167,7 @@ public class  UsuarioDTO{
      *
      * @param relUsuPerfilDTOCol
      */
-    public void setrelUsuPerfilDTOCol(Set<RelUsuPerDTO> relUsuPerfilDTOCol) {
+    public void setrelUsuPerfilDTOCol(Set<RelacionUsuarioPerfilDTO> relUsuPerfilDTOCol) {
         this.relUsuPerfilDTOCol = relUsuPerfilDTOCol;
     }
 }

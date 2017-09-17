@@ -1,5 +1,7 @@
 package ei.contable.cliente.mdl.dto;
 
+import org.hibernate.annotations.Where;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,7 +19,8 @@ import java.util.Set;
  */
 @Entity
 @Table(name="`SISCONTBLROL`")
-public class  RolDTO{
+@Where( clause = "`FECHAFIN` IS NULL" )
+public class  RolDTO extends BaseEntity{
     /**
      *
      */
@@ -31,8 +34,8 @@ public class  RolDTO{
      * 
      */
     //@Column(name = "`CODIGOMODULO`", nullable = false)
-    @JoinColumn(name = "`CODIGOMODULO`", referencedColumnName = "`CODIGOMODULO`", insertable = false, updatable = false)
-    private Integer codigoModulo;
+    /*@JoinColumn(name = "`CODIGOMODULO`", referencedColumnName = "`CODIGOMODULO`", insertable = false, updatable = false)
+    private Integer codigoModulo;*/
     /**
      * 
      */
@@ -52,7 +55,7 @@ public class  RolDTO{
      * 
      */
     @OneToMany(mappedBy = "rolDTOCol")
-    private Set<RelRolUsuDTO> relRolUsuarioDTOCol;
+    private Set<RelacionRolUsuarioDTO> relRolUsuarioDTOCol;
     /**
      * 
      */
@@ -81,17 +84,17 @@ public class  RolDTO{
      * @return
      */
 
-    public Integer getCodigoModulo() {
+    /*public Integer getCodigoModulo() {
         return codigoModulo;
-    }
+    }*/
 
     /**
      *
      * @param codigoModulo
      */
-    public void setCodigoModulo(Integer codigoModulo) {
+    /*public void setCodigoModulo(Integer codigoModulo) {
         this.codigoModulo = codigoModulo;
-    }
+    }*/
 
     /**
      *
@@ -150,7 +153,7 @@ public class  RolDTO{
      */
 
 
-    public Set<RelRolUsuDTO> getrelRolUsuarioDTOCol() {
+    public Set<RelacionRolUsuarioDTO> getrelRolUsuarioDTOCol() {
         return relRolUsuarioDTOCol;
     }
 
@@ -158,7 +161,7 @@ public class  RolDTO{
      *
      * @param relRolUsuarioDTOCol
      */
-    public void setrelRolUsuarioDTOCol(Set<RelRolUsuDTO> relRolUsuarioDTOCol) {
+    public void setrelRolUsuarioDTOCol(Set<RelacionRolUsuarioDTO> relRolUsuarioDTOCol) {
         this.relRolUsuarioDTOCol = relRolUsuarioDTOCol;
     }
 

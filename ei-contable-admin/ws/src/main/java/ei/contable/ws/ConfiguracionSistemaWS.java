@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.Set;
 
 @Controller
 @RequestMapping("configuracionsitemaws/")
@@ -52,9 +54,9 @@ public class ConfiguracionSistemaWS {
     }
 
     @GetMapping("mobuloAll")
-    public ResponseEntity<Collection<ModuloDTO>> getAll() {
-        Collection<ModuloDTO> modulo = moduloService.getAll();
-        return new ResponseEntity<Collection<ModuloDTO>>(modulo, HttpStatus.OK);
+    public ResponseEntity<List<ModuloDTO>> getAll() {
+        List<ModuloDTO> modulo = moduloService.getAll();
+        return new ResponseEntity<List<ModuloDTO>>(modulo, HttpStatus.OK);
     }
 
 }

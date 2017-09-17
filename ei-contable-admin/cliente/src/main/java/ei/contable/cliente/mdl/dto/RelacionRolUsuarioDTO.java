@@ -1,5 +1,7 @@
 package ei.contable.cliente.mdl.dto;
 
+import org.hibernate.annotations.Where;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,7 +18,8 @@ import javax.persistence.JoinColumn;
  */
 @Entity
 @Table(name="`SISCONTBLRELROLUSU`")
-public class  RelRolUsuDTO{
+@Where( clause = "`FECHAFIN` IS NULL" )
+public class RelacionRolUsuarioDTO extends BaseEntity{
     /**
      *
      */
@@ -30,14 +33,14 @@ public class  RelRolUsuDTO{
      *
      */
     //@Column(name = "`CODIGOUSUARIO`", nullable = false)
-    @JoinColumn(name = "`CODIGOUSUARIO`", referencedColumnName = "`CODIGOUSUARIO`", insertable = false, updatable = false)
-    private Integer codigoUsuario;
+    /*@JoinColumn(name = "`CODIGOUSUARIO`", referencedColumnName = "`CODIGOUSUARIO`", insertable = false, updatable = false)
+    private Integer codigoUsuario;*/
     /**
      *
      */
     //@Column(name = "`CODIGOROL`", nullable = false)
-    @JoinColumn(name = "`CODIGOROL`", referencedColumnName = "`CODIGOROL`", insertable = false, updatable = false)
-    private Integer codigoRol;
+    /*@JoinColumn(name = "`CODIGOROL`", referencedColumnName = "`CODIGOROL`", insertable = false, updatable = false)
+    private Integer codigoRol;*/
 
     /**
      *
@@ -73,33 +76,33 @@ public class  RelRolUsuDTO{
      *
      * @return
      */
-    public Integer getCodigoUsuario() {
+    /*public Integer getCodigoUsuario() {
         return codigoUsuario;
-    }
+    }*/
 
     /**
      *
      * @param codigoUsuario
      */
-    public void setCodigoUsuario(Integer codigoUsuario) {
+    /*public void setCodigoUsuario(Integer codigoUsuario) {
         this.codigoUsuario = codigoUsuario;
-    }
+    }*/
 
     /**
      *
      * @return
      */
-    public Integer getCodigoRol() {
+    /*public Integer getCodigoRol() {
         return codigoRol;
-    }
+    }*/
 
     /**
      *
      * @param codigoRol
      */
-    public void setCodigoRol(Integer codigoRol) {
+    /*public void setCodigoRol(Integer codigoRol) {
         this.codigoRol = codigoRol;
-    }
+    }*/
 
     /**
      *

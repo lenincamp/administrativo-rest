@@ -1,5 +1,7 @@
 package ei.contable.cliente.mdl.dto;
 
+import org.hibernate.annotations.Where;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,7 +18,8 @@ import javax.persistence.JoinColumn;
  */
 @Entity
 @Table(name="`SISCONTBLRELMODPER`")
-public class RelModPerDTO {
+@Where( clause = "`FECHAFIN` IS NULL" )
+public class RelacionModuloPerfilDTO extends BaseEntity{
 
     /**
      *
@@ -31,25 +34,25 @@ public class RelModPerDTO {
      *
      */
     //@Column(name = "`CODIGOMODULO`", nullable = false)
-    @JoinColumn(name = "`CODIGOMODULO`", referencedColumnName = "`CODIGOMODULO`", insertable = false, updatable = false)
-    private Integer codigoModulo;
+    //@JoinColumn(name = "`CODIGOMODULO`", referencedColumnName = "`CODIGOMODULO`", insertable = false, updatable = false)
+    //private Integer codigoModulo;
 
     /**
      *
      */
     //@Column(name = "`CODIGOPERFIL`", nullable = false)
-    @JoinColumn(name = "`CODIGOPERFIL`", referencedColumnName = "`CODIGOPERFIL`", insertable = false, updatable = false)
-    private Integer codigoPerfil;
+    //@JoinColumn(name = "`CODIGOPERFIL`", referencedColumnName = "`CODIGOPERFIL`", insertable = false, updatable = false)
+    //private Integer codigoPerfil;
 
     /**
-     *
+     * relación con modulo
      */
     @ManyToOne
     @JoinColumn(name = "`CODIGOMODULO`", referencedColumnName = "`CODIGOMODULO`", nullable = false)
     private ModuloDTO moduloDTOCol;
 
     /**
-     *
+     * relación con perfil
      */
     @ManyToOne
     @JoinColumn(name = "`CODIGOPERFIL`", referencedColumnName = "`CODIGOPERFIL`", nullable = false)
@@ -75,32 +78,32 @@ public class RelModPerDTO {
      *
      * @return
      */
-    public Integer getCodigoModulo() {
+    /*public Integer getCodigoModulo() {
         return codigoModulo;
-    }
+    }*/
 
     /**
      *
      * @param codigoModulo
      */
-    public void setCodigoModulo(Integer codigoModulo) {
+    /*public void setCodigoModulo(Integer codigoModulo) {
         this.codigoModulo = codigoModulo;
-    }
+    }*/
 
     /**
      *  @return
      */
-    public Integer getCodigoPerfil() {
+    /*public Integer getCodigoPerfil() {
         return codigoPerfil;
-    }
+    }*/
 
     /**
      *
      * @param codigoPerfil
      */
-    public void setCodigoPerfil(Integer codigoPerfil) {
+    /*public void setCodigoPerfil(Integer codigoPerfil) {
         this.codigoPerfil = codigoPerfil;
-    }
+    }*/
 
     /**
      *

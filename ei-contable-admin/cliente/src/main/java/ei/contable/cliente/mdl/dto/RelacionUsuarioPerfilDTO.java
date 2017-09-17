@@ -1,5 +1,7 @@
 package ei.contable.cliente.mdl.dto;
 
+import org.hibernate.annotations.Where;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,7 +17,8 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="`SISCONTBLRELUSUPER`")
-public class RelUsuPerDTO {
+@Where( clause = "`FECHAFIN` IS NULL" )
+public class RelacionUsuarioPerfilDTO extends BaseEntity{
 
     /**
      *
@@ -29,14 +32,14 @@ public class RelUsuPerDTO {
      *
      */
     //@Column(name = "`CODIGOUSUARIO`", nullable = false)
-    @JoinColumn(name = "`CODIGOUSUARIO`", referencedColumnName = "`CODIGOUSUARIO`", insertable = false, updatable = false)
-    private Integer codigoUsuario;
+    /*@JoinColumn(name = "`CODIGOUSUARIO`", referencedColumnName = "`CODIGOUSUARIO`", insertable = false, updatable = false)
+    private Integer codigoUsuario;*/
     /**
      *
      */
     //@Column(name = "`CODIGOPERFIL`", nullable = false)
-    @JoinColumn(name = "`CODIGOPERFIL`", referencedColumnName = "`CODIGOPERFIL`", insertable = false, updatable = false)
-    private Integer codigoPerfil;
+    /*@JoinColumn(name = "`CODIGOPERFIL`", referencedColumnName = "`CODIGOPERFIL`", insertable = false, updatable = false)
+    private Integer codigoPerfil;*/
     /**
      *
      */
@@ -71,34 +74,34 @@ public class RelUsuPerDTO {
      * @return
      */
 
-    public Integer getCodigoUsuario() {
+   /* public Integer getCodigoUsuario() {
         return codigoUsuario;
-    }
+    }*/
 
     /**
      *
      * @param codigoUsuario
      */
-    public void setCodigoUsuario(Integer codigoUsuario) {
+    /*public void setCodigoUsuario(Integer codigoUsuario) {
         this.codigoUsuario = codigoUsuario;
-    }
+    }*/
 
     /**
      *
      * @return
      */
 
-    public Integer getCodigoPerfil() {
+    /*public Integer getCodigoPerfil() {
         return codigoPerfil;
-    }
+    }*/
 
     /**
      *
      * @param codigoPerfil
      */
-    public void setCodigoPerfil(Integer codigoPerfil) {
+    /*public void setCodigoPerfil(Integer codigoPerfil) {
         this.codigoPerfil = codigoPerfil;
-    }
+    }*/
 
     /**
      *

@@ -1,5 +1,11 @@
 package ei.contable.cliente.mdl.dto;
 
+import org.hibernate.annotations.Filter;
+import org.hibernate.annotations.FilterDef;
+import org.hibernate.annotations.Filters;
+import org.hibernate.annotations.ParamDef;
+import org.hibernate.annotations.Where;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -17,6 +23,10 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="`SISCONTBLMENU`")
+@Where( clause = "`FECHAFIN` IS NULL" )
+
+@FilterDef(name="activeMenu", parameters=@ParamDef( name="fechaFin", type="Date" ) )
+@Filter(name="activeMenu", condition="active = :active")
 public class MenuDTO extends  BaseEntity{
 
     /**

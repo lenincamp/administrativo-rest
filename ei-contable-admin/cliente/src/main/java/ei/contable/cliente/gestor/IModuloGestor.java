@@ -5,6 +5,7 @@ import ei.contable.cliente.vo.ModuloVO;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 /**
  *@author Lenin-PC
