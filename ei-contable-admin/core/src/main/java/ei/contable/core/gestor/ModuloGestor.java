@@ -2,8 +2,8 @@ package ei.contable.core.gestor;
 
 import ei.contable.cliente.gestor.IModuloGestor;
 import ei.contable.cliente.mdl.dto.ModuloDTO;
+import ei.contable.cliente.persistencia.dao.IModuloDAO;
 import ei.contable.cliente.vo.ModuloVO;
-import ei.contable.core.persistencia.dao.ModuloDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -12,11 +12,10 @@ import java.util.List;
 @Component
 public class ModuloGestor implements IModuloGestor{
     @Autowired
-    ModuloDAO moduloDAO;
+    IModuloDAO moduloDAO;
 
     @Override
     public void guardarModulo(ModuloVO modulo) {
-
         ModuloDTO mod = new ModuloDTO();
         mod.setCodigo(modulo.getCodigo());
         mod.setNombre(modulo.getNombre());
@@ -32,7 +31,6 @@ public class ModuloGestor implements IModuloGestor{
 
     @Override
     public void editarModulo(ModuloVO modulo) {
-
         ModuloDTO mod = new ModuloDTO();
         mod.setCodigoModulo(modulo.getCodigoModulo());
         mod.setCodigo(modulo.getCodigo());

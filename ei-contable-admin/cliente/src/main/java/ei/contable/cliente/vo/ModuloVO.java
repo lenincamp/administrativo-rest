@@ -1,7 +1,9 @@
 package ei.contable.cliente.vo;
 
 import java.sql.Timestamp;
-
+/**
+ * @author Lenin-PC
+ */
 public class ModuloVO {
     private Integer codigoModulo;
 

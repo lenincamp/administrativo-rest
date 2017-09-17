@@ -2,16 +2,16 @@ package ei.contable.core.gestor;
 
 import ei.contable.cliente.gestor.IMenuGestor;
 import ei.contable.cliente.mdl.dto.MenuDTO;
+import ei.contable.cliente.persistencia.dao.IMenuDAO;
 import ei.contable.cliente.vo.MenuVO;
-import ei.contable.core.persistencia.dao.MenuDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class MenuGestor implements IMenuGestor {
     @Autowired
-    MenuDAO menuDAO;
-    MenuDTO menuDTO;
+    IMenuDAO menuDAO;
+    MenuDTO menuDTO = new MenuDTO();
     @Override
     public void guardarMenu(MenuVO menu) {
         menuDTO = null;
