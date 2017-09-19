@@ -108,7 +108,7 @@ public class RelacionRolUsuarioDTO extends BaseEntity{
      *
      * @return
      */
-    public UsuarioDTO getusuarioDTOCol() {
+    public UsuarioDTO getUsuarioDTOCol() {
         return usuarioDTOCol;
     }
 
@@ -116,7 +116,7 @@ public class RelacionRolUsuarioDTO extends BaseEntity{
      *
      * @param usuarioDTOCol
      */
-    public void setusuarioDTOCol(UsuarioDTO usuarioDTOCol) {
+    public void setUsuarioDTOCol(UsuarioDTO usuarioDTOCol) {
         this.usuarioDTOCol = usuarioDTOCol;
     }
 
@@ -124,7 +124,7 @@ public class RelacionRolUsuarioDTO extends BaseEntity{
      *
      * @return
      */
-    public RolDTO getrolDTOCol() {
+    public RolDTO getRolDTOCol() {
         return rolDTOCol;
     }
 
@@ -132,7 +132,7 @@ public class RelacionRolUsuarioDTO extends BaseEntity{
      *
      * @param rolDTOCol
      */
-    public void setrolDTOCol(RolDTO rolDTOCol) {
+    public void setRolDTOCol(RolDTO rolDTOCol) {
         this.rolDTOCol = rolDTOCol;
     }
 }

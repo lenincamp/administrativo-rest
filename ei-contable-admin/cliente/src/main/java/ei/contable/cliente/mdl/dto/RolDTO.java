@@ -153,7 +153,7 @@ public class  RolDTO extends BaseEntity{
      */
 
 
-    public Set<RelacionRolUsuarioDTO> getrelRolUsuarioDTOCol() {
+    public Set<RelacionRolUsuarioDTO> getRelRolUsuarioDTOCol() {
         return relRolUsuarioDTOCol;
     }
 
@@ -161,7 +161,7 @@ public class  RolDTO extends BaseEntity{
      *
      * @param relRolUsuarioDTOCol
      */
-    public void setrelRolUsuarioDTOCol(Set<RelacionRolUsuarioDTO> relRolUsuarioDTOCol) {
+    public void setRelRolUsuarioDTOCol(Set<RelacionRolUsuarioDTO> relRolUsuarioDTOCol) {
         this.relRolUsuarioDTOCol = relRolUsuarioDTOCol;
     }
 
@@ -170,11 +170,11 @@ public class  RolDTO extends BaseEntity{
      * @return
      */
 
-    public ModuloDTO getmoduloDTOCol() {
+    public ModuloDTO getModuloDTOCol() {
         return moduloDTOCol;
     }
 
-    public void setmoduloDTOCol(ModuloDTO moduloDTOCol) {
+    public void setModuloDTOCol(ModuloDTO moduloDTOCol) {
         this.moduloDTOCol = moduloDTOCol;
     }
 }

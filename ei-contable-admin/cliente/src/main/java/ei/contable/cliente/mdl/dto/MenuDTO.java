@@ -64,43 +64,82 @@ public class MenuDTO extends  BaseEntity{
     private String descripcion;
 
 
-
+    /**
+     *
+     * @return
+     */
     public Integer getCodigoMenu() {
         return codigoMenu;
     }
 
+    /**
+     *
+     * @param codigoMenu
+     */
     public void setCodigoMenu(Integer codigoMenu) {
         this.codigoMenu = codigoMenu;
     }
 
+    /**
+     *
+     * @return
+     */
     public ModuloDTO getCodigoModuloDTO() {
         return moduloDTOCol;
     }
 
+    /**
+     *
+     * @param moduloDTOCol
+     */
     public void setCodigoModuloDTO(ModuloDTO moduloDTOCol) {
         this.moduloDTOCol = moduloDTOCol;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getNombre() {
         return nombre;
     }
 
+    /**
+     *
+     * @param nombre
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getUrl() {
         return url;
     }
 
+    /**
+     *
+     * @param url
+     */
     public void setUrl(String url) {
         this.url = url;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDescripcion() {
         return descripcion;
     }
 
+    /**
+     *
+     * @param descripcion
+     */
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }

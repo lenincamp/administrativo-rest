@@ -135,14 +135,14 @@ public class RelacionSistemaFuenteParticipanteDTO extends BaseEntity{
      * @return
      */
     
-    public SistemaFuenteDTO getsistemaFuenteDTOCol() {
+    public SistemaFuenteDTO getSistemaFuenteDTOCol() {
         return sistemaFuenteDTOCol;
     }
     /**
      *
      * @return
      */
-    public void setsistemaFuenteDTOCol(SistemaFuenteDTO sistemaFuenteDTOCol) {
+    public void setSistemaFuenteDTOCol(SistemaFuenteDTO sistemaFuenteDTOCol) {
         this.sistemaFuenteDTOCol = sistemaFuenteDTOCol;
     }
 
@@ -150,14 +150,14 @@ public class RelacionSistemaFuenteParticipanteDTO extends BaseEntity{
      *
      * @return
      */
-    public ParticipanteDTO getparticipanteDTOCol() {
+    public ParticipanteDTO getParticipanteDTOCol() {
         return participanteDTOCol;
     }
     /**
      *
      * @return
      */
-    public void setparticipanteDTOCol(ParticipanteDTO participanteDTOCol) {
+    public void setParticipanteDTOCol(ParticipanteDTO participanteDTOCol) {
         this.participanteDTOCol = participanteDTOCol;
     }
 
@@ -165,14 +165,14 @@ public class RelacionSistemaFuenteParticipanteDTO extends BaseEntity{
      *
      * @return
      */
-    public UsuarioDTO getusuarioDTOCol() {
+    public UsuarioDTO getUsuarioDTOCol() {
         return usuarioDTOCol;
     }
     /**
      *
      * @return
      */
-    public void setusuarioDTOCol(UsuarioDTO usuarioDTOCol) {
+    public void setUsuarioDTOCol(UsuarioDTO usuarioDTOCol) {
         this.usuarioDTOCol = usuarioDTOCol;
     }
 }

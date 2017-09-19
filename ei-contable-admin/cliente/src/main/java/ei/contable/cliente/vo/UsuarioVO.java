@@ -1,30 +1,33 @@
 package ei.contable.cliente.vo;
+
+import java.sql.Timestamp;
+
 /**
  * @author Lenin-PC
  */
 public class UsuarioVO {
-  private Long codigousuario;
-  private String nombrelogin;
+  private Integer codigoUsuario;
+  private String nombreLogin;
   private String password;
-  private String codigosistema;
-  private Long codigousuarioregistro;
-  private java.sql.Timestamp fecharegistro;
-  private java.sql.Timestamp fechafin;
+  private String codigoSistema;
+  private Integer codigoUsuarioRegistro;
+  private java.sql.Timestamp fechaRegistro;
+  private java.sql.Timestamp fechaFin;
 
-  public Long getCodigousuario() {
-    return codigousuario;
+  public Integer getCodigoUsuario() {
+    return codigoUsuario;
   }
 
-  public void setCodigousuario(Long codigousuario) {
-    this.codigousuario = codigousuario;
+  public void setCodigoUsuario(Integer codigoUsuario) {
+    this.codigoUsuario = codigoUsuario;
   }
 
-  public String getNombrelogin() {
-    return nombrelogin;
+  public String getNombreLogin() {
+    return nombreLogin;
   }
 
-  public void setNombrelogin(String nombrelogin) {
-    this.nombrelogin = nombrelogin;
+  public void setNombreLogin(String nombreLogin) {
+    this.nombreLogin = nombreLogin;
   }
 
   public String getPassword() {
@@ -35,35 +38,35 @@ public class UsuarioVO {
     this.password = password;
   }
 
-  public String getCodigosistema() {
-    return codigosistema;
+  public String getCodigoSistema() {
+    return codigoSistema;
   }
 
-  public void setCodigosistema(String codigosistema) {
-    this.codigosistema = codigosistema;
+  public void setCodigoSistema(String codigoSistema) {
+    this.codigoSistema = codigoSistema;
   }
 
-  public Long getCodigousuarioregistro() {
-    return codigousuarioregistro;
+  public Integer getCodigoUsuarioRegistro() {
+    return codigoUsuarioRegistro;
   }
 
-  public void setCodigousuarioregistro(Long codigousuarioregistro) {
-    this.codigousuarioregistro = codigousuarioregistro;
+  public void setCodigoUsuarioRegistro(Integer codigoUsuarioRegistro) {
+    this.codigoUsuarioRegistro = codigoUsuarioRegistro;
   }
 
-  public java.sql.Timestamp getFecharegistro() {
-    return fecharegistro;
+  public Timestamp getFechaRegistro() {
+    return fechaRegistro;
   }
 
-  public void setFecharegistro(java.sql.Timestamp fecharegistro) {
-    this.fecharegistro = fecharegistro;
+  public void setFechaRegistro(Timestamp fechaRegistro) {
+    this.fechaRegistro = fechaRegistro;
   }
 
-  public java.sql.Timestamp getFechafin() {
-    return fechafin;
+  public Timestamp getFechaFin() {
+    return fechaFin;
   }
 
-  public void setFechafin(java.sql.Timestamp fechafin) {
-    this.fechafin = fechafin;
+  public void setFechaFin(Timestamp fechaFin) {
+    this.fechaFin = fechaFin;
   }
 }

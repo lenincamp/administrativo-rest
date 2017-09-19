@@ -109,7 +109,7 @@ public class RelacionModuloPerfilDTO extends BaseEntity{
      *
      * @return
      */
-    public ModuloDTO getmoduloDTOCol() {
+    public ModuloDTO getModuloDTOCol() {
         return moduloDTOCol;
     }
 
@@ -117,7 +117,7 @@ public class RelacionModuloPerfilDTO extends BaseEntity{
      *
      * @param moduloDTOCol
      */
-    public void setmoduloDTOCol(ModuloDTO moduloDTOCol) {
+    public void setModuloDTOCol(ModuloDTO moduloDTOCol) {
         this.moduloDTOCol = moduloDTOCol;
     }
 
@@ -125,7 +125,7 @@ public class RelacionModuloPerfilDTO extends BaseEntity{
      *
      * @return
      */
-    public PerfilDTO getperfilDTOCol() {
+    public PerfilDTO getPerfilDTOCol() {
         return perfilDTOCol;
     }
 
@@ -133,7 +133,7 @@ public class RelacionModuloPerfilDTO extends BaseEntity{
      *
      * @param perfilDTOCol
      */
-    public void setperfilDTOCol(PerfilDTO perfilDTOCol) {
+    public void setPerfilDTOCol(PerfilDTO perfilDTOCol) {
         this.perfilDTOCol = perfilDTOCol;
     }
 }

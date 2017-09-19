@@ -33,6 +33,7 @@ public class PerfilGestor implements IPerfilGestor {
     @Override
     public void update(PerfilVO perfil) {
         PerfilDTO per = new PerfilDTO();
+        per.setCodigoPerfil(perfil.getCodigoPerfil());
         per.setCodigo(perfil.getCodigo());
         per.setDescripcion(perfil.getDescripcion());
         per.setNombre(perfil.getNombre());

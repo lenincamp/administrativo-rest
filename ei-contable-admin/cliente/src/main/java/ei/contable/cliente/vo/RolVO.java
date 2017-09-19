@@ -1,31 +1,34 @@
 package ei.contable.cliente.vo;
+
+import java.sql.Timestamp;
+
 /**
  * @author Lenin-PC
  */
 public class RolVO {
-  private Long codigorol;
-  private Long codigomodulo;
+  private Integer codigoRol;
+  private Integer codigoModulo;
   private String codigo;
   private String nombre;
   private String descripcion;
-  private Long codigousuarioregistro;
-  private java.sql.Timestamp fecharegistro;
-  private java.sql.Timestamp fechafin;
+  private Integer codigoUsuarioRegistro;
+  private java.sql.Timestamp fechaRegistro;
+  private java.sql.Timestamp fechaFin;
 
-  public Long getCodigorol() {
-    return codigorol;
+  public Integer getCodigoRol() {
+    return codigoRol;
   }
 
-  public void setCodigorol(Long codigorol) {
-    this.codigorol = codigorol;
+  public void setCodigoRol(Integer codigoRol) {
+    this.codigoRol = codigoRol;
   }
 
-  public Long getCodigomodulo() {
-    return codigomodulo;
+  public Integer getCodigoModulo() {
+    return codigoModulo;
   }
 
-  public void setCodigomodulo(Long codigomodulo) {
-    this.codigomodulo = codigomodulo;
+  public void setCodigoModulo(Integer codigoModulo) {
+    this.codigoModulo = codigoModulo;
   }
 
   public String getCodigo() {
@@ -52,27 +55,27 @@ public class RolVO {
     this.descripcion = descripcion;
   }
 
-  public Long getCodigousuarioregistro() {
-    return codigousuarioregistro;
+  public Integer getCodigoUsuarioRegistro() {
+    return codigoUsuarioRegistro;
   }
 
-  public void setCodigousuarioregistro(Long codigousuarioregistro) {
-    this.codigousuarioregistro = codigousuarioregistro;
+  public void setCodigoUsuarioRegistro(Integer codigoUsuarioRegistro) {
+    this.codigoUsuarioRegistro = codigoUsuarioRegistro;
   }
 
-  public java.sql.Timestamp getFecharegistro() {
-    return fecharegistro;
+  public Timestamp getFechaRegistro() {
+    return fechaRegistro;
   }
 
-  public void setFecharegistro(java.sql.Timestamp fecharegistro) {
-    this.fecharegistro = fecharegistro;
+  public void setFechaRegistro(Timestamp fechaRegistro) {
+    this.fechaRegistro = fechaRegistro;
   }
 
-  public java.sql.Timestamp getFechafin() {
-    return fechafin;
+  public Timestamp getFechaFin() {
+    return fechaFin;
   }
 
-  public void setFechafin(java.sql.Timestamp fechafin) {
-    this.fechafin = fechafin;
+  public void setFechaFin(Timestamp fechaFin) {
+    this.fechaFin = fechaFin;
   }
 }

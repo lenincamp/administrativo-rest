@@ -126,7 +126,7 @@ public class PerfilDTO extends BaseEntity{
      *
      * @return
      */
-    public Set<RelacionModuloPerfilDTO> getrelModPerfilDTOCol() {
+    public Set<RelacionModuloPerfilDTO> getRelModPerfilDTOCol() {
         return relModPerfilDTOCol;
     }
 
@@ -134,7 +134,7 @@ public class PerfilDTO extends BaseEntity{
      *
      * @param relModPerfilDTOCol
      */
-    public void setrelModPerfilDTOCol(Set<RelacionModuloPerfilDTO> relModPerfilDTOCol) {
+    public void setRelModPerfilDTOCol(Set<RelacionModuloPerfilDTO> relModPerfilDTOCol) {
         this.relModPerfilDTOCol = relModPerfilDTOCol;
     }
 
@@ -142,7 +142,7 @@ public class PerfilDTO extends BaseEntity{
      *
      * @return
      */
-    public Set<RelacionUsuarioPerfilDTO> getrelUsuPerfilDTOCol() {
+    public Set<RelacionUsuarioPerfilDTO> getRelUsuPerfilDTOCol() {
         return relUsuPerfilDTOCol;
     }
 
@@ -150,7 +150,7 @@ public class PerfilDTO extends BaseEntity{
      *
      * @param relUsuPerfilDTOCol
      */
-    public void setrelUsuPerfilDTOCol(Set<RelacionUsuarioPerfilDTO> relUsuPerfilDTOCol) {
+    public void setRelUsuPerfilDTOCol(Set<RelacionUsuarioPerfilDTO> relUsuPerfilDTOCol) {
         this.relUsuPerfilDTOCol = relUsuPerfilDTOCol;
     }
 }

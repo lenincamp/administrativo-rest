@@ -127,7 +127,7 @@ public class  UsuarioDTO extends BaseEntity{
      * @return
      */
     
-    public Set<RelacionRolUsuarioDTO> getrelRolUsuarioDTOCol() {
+    public Set<RelacionRolUsuarioDTO> getRelRolUsuarioDTOCol() {
         return relRolUsuarioDTOCol;
     }
 
@@ -135,7 +135,7 @@ public class  UsuarioDTO extends BaseEntity{
      *
      * @param relRolUsuarioDTOCol
      */
-    public void setrelRolUsuarioDTOCol(Set<RelacionRolUsuarioDTO> relRolUsuarioDTOCol) {
+    public void setRelRolUsuarioDTOCol(Set<RelacionRolUsuarioDTO> relRolUsuarioDTOCol) {
         this.relRolUsuarioDTOCol = relRolUsuarioDTOCol;
     }
 
@@ -143,7 +143,7 @@ public class  UsuarioDTO extends BaseEntity{
     /**
      *
      */
-    public Set<RelacionSistemaFuenteParticipanteDTO> getrelSisFteParticipanteDTOCol() {
+    public Set<RelacionSistemaFuenteParticipanteDTO> getRelSisFteParticipanteDTOCol() {
         return relSisFteParticipanteDTOCol;
     }
 
@@ -151,7 +151,7 @@ public class  UsuarioDTO extends BaseEntity{
      *
      * @param relSisFteParticipanteDTOCol
      */
-    public void setrelSisFteParticipanteDTOCol(Set<RelacionSistemaFuenteParticipanteDTO> relSisFteParticipanteDTOCol) {
+    public void setRelSisFteParticipanteDTOCol(Set<RelacionSistemaFuenteParticipanteDTO> relSisFteParticipanteDTOCol) {
         this.relSisFteParticipanteDTOCol = relSisFteParticipanteDTOCol;
     }
 
@@ -159,7 +159,7 @@ public class  UsuarioDTO extends BaseEntity{
      *
      * @return
      */
-    public Set<RelacionUsuarioPerfilDTO> getrelUsuPerfilDTOCol() {
+    public Set<RelacionUsuarioPerfilDTO> getRelUsuPerfilDTOCol() {
         return relUsuPerfilDTOCol;
     }
 
@@ -167,7 +167,7 @@ public class  UsuarioDTO extends BaseEntity{
      *
      * @param relUsuPerfilDTOCol
      */
-    public void setrelUsuPerfilDTOCol(Set<RelacionUsuarioPerfilDTO> relUsuPerfilDTOCol) {
+    public void setRelUsuPerfilDTOCol(Set<RelacionUsuarioPerfilDTO> relUsuPerfilDTOCol) {
         this.relUsuPerfilDTOCol = relUsuPerfilDTOCol;
     }
 }

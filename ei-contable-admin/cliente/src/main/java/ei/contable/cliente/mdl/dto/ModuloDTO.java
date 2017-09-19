@@ -138,7 +138,7 @@ public class ModuloDTO extends BaseEntity{
      *
      * @return
      */
-    public Set<MenuDTO> getmenuDTOCol() {
+    public Set<MenuDTO> getMenuDTOCol() {
         return menuDTOCol;
     }
 
@@ -146,7 +146,7 @@ public class ModuloDTO extends BaseEntity{
      *
      * @param menuDTOCol
      */
-    public void setmenuDTOCol(Set<MenuDTO> menuDTOCol) {
+    public void setMenuDTOCol(Set<MenuDTO> menuDTOCol) {
         this.menuDTOCol = menuDTOCol;
     }
 
@@ -154,7 +154,7 @@ public class ModuloDTO extends BaseEntity{
      * 
      * @return
      */
-    public Set<RelacionModuloPerfilDTO> getrelModPerfilDTOCol() {
+    public Set<RelacionModuloPerfilDTO> getRelModPerfilDTOCol() {
         return relacionModuloPerfilDTOCol;
     }
 
@@ -162,7 +162,7 @@ public class ModuloDTO extends BaseEntity{
      *
      * @param relacionModuloPerfilDTOCol
      */
-    public void setrelModPerfilDTOCol(Set<RelacionModuloPerfilDTO> relacionModuloPerfilDTOCol) {
+    public void setRelModPerfilDTOCol(Set<RelacionModuloPerfilDTO> relacionModuloPerfilDTOCol) {
         this.relacionModuloPerfilDTOCol = relacionModuloPerfilDTOCol;
     }
 
@@ -170,7 +170,7 @@ public class ModuloDTO extends BaseEntity{
      *
      * @return
      */
-    public Set<RolDTO> getrolDTOCol() {
+    public Set<RolDTO> getRolDTOCol() {
         return rolDTOCol;
     }
 
@@ -178,7 +178,7 @@ public class ModuloDTO extends BaseEntity{
      *
      * @param rolDTOCol
      */
-    public void setrolDTOCol(Set<RolDTO> rolDTOCol) {
+    public void setRolDTOCol(Set<RolDTO> rolDTOCol) {
         this.rolDTOCol = rolDTOCol;
     }
 
