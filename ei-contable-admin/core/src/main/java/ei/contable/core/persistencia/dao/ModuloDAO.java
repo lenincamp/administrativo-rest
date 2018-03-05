@@ -1,15 +1,20 @@
 package ei.contable.core.persistencia.dao;
 
+import ei.contable.cliente.mdl.dto.MenuDTO;
 import ei.contable.cliente.mdl.dto.ModuloDTO;
 import ei.contable.cliente.persistencia.dao.IModuloDAO;
+import ei.contable.cliente.vo.MenuVO;
+import ei.contable.cliente.vo.ModuloVO;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.criterion.ProjectionList;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Repository;
 
+import java.util.Collection;
 import java.util.List;
 
 @Repository
@@ -49,4 +54,39 @@ public class ModuloDAO extends GenericDAO<ModuloDTO> implements IModuloDAO {
         return c.list();
     }
 
+    @Override
+    public void guardarModuloMenu(ModuloVO modulo, Collection<MenuVO> menu) {
+        Session session = null;
+        Transaction transaction = null;
+        try {
+            session = getCurrentSession();
+            transaction = session.getTransaction();
+            transaction.begin();
+
+            ModuloDTO mod = new ModuloDTO();
+            mod.setCodigo(modulo.getCodigo());
+            mod.setNombre(modulo.getNombre());
+            mod.setDescripcion(modulo.getDescripcion());
+            mod.setCodigoUsuarioRegistro(modulo.getCodigoUsuarioRegistro());
+            for (MenuVO men : menu) {
+                MenuDTO menuDTO = new MenuDTO();
+                menuDTO.setCodigoUsuarioRegistro(men.getCodigoUsuarioRegistro());
+                menuDTO.setDescripcion(men.getDescripcion());
+                menuDTO.setNombre(men.getNombre());
+                menuDTO.setUrl(men.getUrl());
+                mod.getMenuDTOCol().add(menuDTO);
+            }
+            session.persist(mod);
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+    }
 }

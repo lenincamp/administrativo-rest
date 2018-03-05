@@ -1,12 +1,17 @@
 package ei.contable.core.gestor;
 
 import ei.contable.cliente.gestor.IModuloGestor;
+import ei.contable.cliente.mdl.dto.MenuDTO;
 import ei.contable.cliente.mdl.dto.ModuloDTO;
 import ei.contable.cliente.persistencia.dao.IModuloDAO;
+import ei.contable.cliente.vo.MenuVO;
 import ei.contable.cliente.vo.ModuloVO;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Collection;
 import java.util.List;
 
 @Component
@@ -22,6 +27,11 @@ public class ModuloGestor implements IModuloGestor{
         mod.setDescripcion(modulo.getDescripcion());
         mod.setCodigoUsuarioRegistro(modulo.getCodigoUsuarioRegistro());
         moduloDAO.save(mod);
+    }
+
+    @Override
+    public void guardarModuloMenu(ModuloVO modulo, Collection<MenuVO> menu){
+        moduloDAO.guardarModuloMenu(modulo,menu);
     }
 
     @Override

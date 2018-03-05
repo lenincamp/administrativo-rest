@@ -1,8 +1,10 @@
 package ei.contable.cliente.gestor;
 
 import ei.contable.cliente.mdl.dto.ModuloDTO;
+import ei.contable.cliente.vo.MenuVO;
 import ei.contable.cliente.vo.ModuloVO;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -40,6 +42,13 @@ public interface IModuloGestor {
      * @return
      */
     List<ModuloDTO> findModuloMenuById(Integer Id);
+
+    /**
+     *
+     * @param modulo
+     * @param menu
+     */
+    void guardarModuloMenu(ModuloVO modulo, Collection<MenuVO> menu);
 
 
 }
